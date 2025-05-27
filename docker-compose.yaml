@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  frontend:
+    build: ./onchain-riddle-frontend
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+
+  bot:
+    build: ./onchain-riddle-bot
+    restart: always
