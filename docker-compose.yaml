@@ -6,7 +6,12 @@ services:
       - "3000:80"
     environment:
       - NODE_ENV=production
+      - PRIVATE_KEY=${PRIVATE_KEY}
+      - SEPOLIA_RPC_URL=${SEPOLIA_RPC_URL}
 
   bot:
     build: ./onchain-riddle-bot
+    environment:
+      - PRIVATE_KEY=${PRIVATE_KEY}
+      - SEPOLIA_RPC_URL=${SEPOLIA_RPC_URL}
     restart: always
